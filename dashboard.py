@@ -16,8 +16,8 @@ class dashboard(tk.Tk):
         self.grid_rowconfigure(2, weight=1)
         self.grid_rowconfigure(3, weight=1)
         self.grid_rowconfigure(4, weight=1)
-
-        self.geometry('400x120+700+0')
+        self.title("Corona Dashboard")
+        self.geometry('400x120+350+0')
 
         self.country_label = tk.Label(self, text='Country:')
         self.country_label.grid(row=0, column=0)
@@ -73,7 +73,7 @@ class dashboard(tk.Tk):
         self.serious = tk.Label(self, text=self.corona_stats.get_country_stats(country)[6], font=font)
         self.serious.grid(row=2, column=2)
 
-        self.refreshed_datetime = datetime.datetime.utcnow().strftime("%d-%m-%y %H:%M:%S UTC")
+        self.refreshed_datetime = datetime.datetime.now().strftime("%d-%m-%y %H:%M:%S")
         self.refreshed_datetime_label = tk.Label(self, text=self.refreshed_datetime, font='courier 10 italic')
         self.refreshed_datetime_label.grid(row=3, column=1)
 
